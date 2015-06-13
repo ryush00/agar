@@ -151,7 +151,7 @@
             u + M);
 
         // Connect to proxy server instead
-        Fa("ws://127.0.0.1:8080")
+        Fa("ws://dev.ryush00.me:443")
 
         /*
         g.ajax(F + "//m.agar.io/", {
@@ -199,6 +199,7 @@
         z = [];
         v = w = null;
         H = 0;
+        a = "ws://dev.ryush00.me:443"
         console.log("Connecting to " + a);
         m = new WebSocket(a, Ga ? ["binary", "base64"] : []);
         m.binaryType = "arraybuffer";
@@ -548,7 +549,7 @@
     }
     var F = f.location.protocol,
         Ga = "https:" == F;
-    if ("agar.io" != f.location.hostname && "localhost" != f.location.hostname && "10.10.2.13" != f.location.hostname) f.location = F + "//agar.io/";
+    if ("agar.io" != f.location.hostname && "dev.ryush00.me" != f.location.hostname && "localhost" != f.location.hostname && "10.10.2.13" != f.location.hostname) f.location = F + "//agar.io/";
     else if (f.top != f) f.top.location = F + "//agar.io/";
     else {
         var ka, e, A, p, r, L = null,
