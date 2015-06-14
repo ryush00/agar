@@ -151,7 +151,7 @@
             u + M);
 
         // Connect to proxy server instead
-        Fa("ws://dev.ryush00.me:443")
+        Fa("ws://CHANGEME:443")
 
         /*
         g.ajax(F + "//m.agar.io/", {
@@ -199,7 +199,7 @@
         z = [];
         v = w = null;
         H = 0;
-        a = "ws://dev.ryush00.me:443"
+        a = "ws://CHANGEME"
         console.log("Connecting to " + a);
         m = new WebSocket(a, Ga ? ["binary", "base64"] : []);
         m.binaryType = "arraybuffer";
@@ -477,17 +477,17 @@
         e.restore();
         v && v.width && e.drawImage(v, p - v.width - 10, 10);
         H = Math.max(H, Xa());
-        0 != H && (null == ga && (ga = new ha(24, "#FFFFFF")), ga.setValue("Score: " + ~~(H / 100)), a = ga.render(), b = a.width, e.globalAlpha = .2, e.fillStyle = "#000000", e.fillRect(10, r - 10 - 24 - 10, b + 10, 34), e.globalAlpha = 1, e.drawImage(a, 15, r - 10 - 24 - 5));
-        Ya();
+        0 != H && (null == ga && (ga = new ha(24, "#FFFFFF")), ga.setValue("점수: " + ~~(H / 100)), a = ga.render(), b = a.width, e.globalAlpha = .2, e.fillStyle = "#000000", e.fillRect(10, r - 10 - 24 - 10, b + 10, 34), e.globalAlpha = 1, e.drawImage(a, 15, r - 10 - 24 - 5));
+        drawSplitButton();
         c = +new Date - c;
         c > 1E3 / 60 ? x -= .01 : c < 1E3 / 65 && (x += .01);.4 > x && (x = .4);
         1 < x && (x = 1)
     }
 
-    function Ya() {
-        if (ya && ua.width) {
+    function drawSplitButton() {
+        if (ya && spiltButtonImage.width) {
             var a = p / 5;
-            e.drawImage(ua, 5, 5, a, a)
+            e.drawImage(spiltButtonImage, 5, 5, a, a)
         }
     }
 
@@ -514,13 +514,13 @@
                 a.globalAlpha = 1;
                 a.fillStyle = "#FFFFFF";
                 c = null;
-                c = "Leaderboard";
-                a.font = "30px Ubuntu";
+                c = "순위";
+                a.font = "30px 'Malgun Gothic','Nanum Gothic', Ubuntu";
                 a.fillText(c, 100 - a.measureText(c)
                     .width /
                     2, 40);
                 if (null == w)
-                    for (a.font = "20px Ubuntu", b = 0; b < z.length; ++b) c = z[b].name || "An unnamed cell", ia || (c = "An unnamed cell"), -1 != E.indexOf(z[b].id) ? (l[0].name && (c = l[0].name), a.fillStyle = "#FFAAAA") : a.fillStyle = "#FFFFFF", c = b + 1 + ". " + c, a.fillText(c, 100 - a.measureText(c)
+                    for (a.font = "20px 'Malgun Gothic','Nanum Gothic', Ubuntu", b = 0; b < z.length; ++b) c = z[b].name || "이름 없는 세포", ia || (c = "이름 없는 세포"), -1 != E.indexOf(z[b].id) ? (l[0].name && (c = l[0].name), a.fillStyle = "#FFAAAA") : a.fillStyle = "#FFFFFF", c = b + 1 + ". " + c, a.fillText(c, 100 - a.measureText(c)
                         .width / 2, 70 + 24 * b);
                 else
                     for (b = c = 0; b < w.length; ++b) angEnd = c + w[b] * Math.PI * 2, a.fillStyle = Za[b + 1], a.beginPath(), a.moveTo(100, 140), a.arc(100, 140, 80, c, angEnd, !1), a.fill(), c = angEnd
@@ -549,7 +549,7 @@
     }
     var F = f.location.protocol,
         Ga = "https:" == F;
-    if ("agar.io" != f.location.hostname && "dev.ryush00.me" != f.location.hostname && "localhost" != f.location.hostname && "10.10.2.13" != f.location.hostname) f.location = F + "//agar.io/";
+    if ("agar.io" != f.location.hostname && "CHANGEME" != f.location.hostname && "localhost" != f.location.hostname && "10.10.2.13" != f.location.hostname) f.location = F + "//agar.io/";
     else if (f.top != f) f.top.location = F + "//agar.io/";
     else {
         var ka, e, A, p, r, L = null,
@@ -598,8 +598,8 @@
             ta = !1,
             C = 1,
             ya = "ontouchstart" in f && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-            ua = new Image;
-        ua.src = "img/split.png";
+            spiltButtonImage = new Image;
+        spiltButtonImage.src = "img/split.png";
         Q = document.createElement("canvas");
         if ("undefined" == typeof console || "undefined" == typeof DataView ||
             "undefined" == typeof WebSocket || null == Q || null == Q.getContext || null == f.localStorage) alert("You browser does not support this game, we recommend you to use Firefox to play this");
@@ -1181,7 +1181,7 @@
                             c = this._value,
                             d = this._scale,
                             e = this._size,
-                            f = e + "px Ubuntu";
+                            f = e + "px 'Malgun Gothic','Nanum Gothic', Ubuntu";
                         b.font = f;
                         var g = b.measureText(c)
                             .width,
